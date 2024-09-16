@@ -61,7 +61,7 @@ void inicializaSDL() {
 
     ultimoDelInf = 0;
 
-    window = SDL_CreateWindow("Simulação de Areia", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, LARGURA * WINDOW_SCALE, ALTURA * WINDOW_SCALE, SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("Simulação de Queda de Pixels", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, LARGURA * WINDOW_SCALE, ALTURA * WINDOW_SCALE, SDL_WINDOW_SHOWN);
     if (window == NULL) {
         fprintf(stderr, "Erro ao criar janela: %s\n", SDL_GetError());
         SDL_Quit();
