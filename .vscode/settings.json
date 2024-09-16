@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "areia.h": "c"
+        "areia.h": "c",
+        "tela.h": "c",
+        "renderizacao.h": "c"
     }
 }

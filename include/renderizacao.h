@@ -3,7 +3,7 @@
 
 #include <SDL2/SDL.h>
 
-#define WINDOW_SCALE 8
+#define WINDOW_SCALE 4
 
 extern SDL_Window* window;
 extern SDL_Renderer* renderer;

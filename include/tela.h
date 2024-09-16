@@ -1,17 +1,27 @@
 #ifndef _tela_h_
 #define _tela_h_
 
-#define ALTURA 32
-#define LARGURA 32
+#define ALTURA 128
+#define LARGURA 128
 
-extern unsigned char **tela;
+typedef struct {
+    unsigned char ativo;
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
+}Pixel, Tela;
 
+extern Tela **tela;
+extern unsigned char r, g, b;
+extern unsigned demarcadorInferior;
+extern unsigned demarcadorSuperior;
 
 void inicializaTela();
-void setPixel(unsigned x, unsigned y);
+void atualizaCor();
+unsigned atualizaDemarcadorInferior();
+unsigned atualizaDemarcadorSuperior();
+void setPixel(unsigned x, unsigned y, Pixel p);
 void resetPixel(unsigned x, unsigned y);
-void printaTela();
-unsigned contaParticulas();
 void finalizaTela();
 
 #endif
