@@ -11,7 +11,6 @@ unsigned xNovo, yNovo;
 #define QUEDA_DELAY 1
 
 int realizaQueda(unsigned x, unsigned y) {
-    // Atualiza a posição apenas uma vez
     setPixel(xNovo, yNovo, tela[x][y]);
     resetPixel(x, y);
     return 1;
@@ -44,13 +43,35 @@ int autenticaQueda(int x, int y) {
 
 void realizaQuedas() {
     for (int i = ALTURA - demarcadorInferior; i >= (int) demarcadorSuperior; i--) {
-        for (int j = 0; j < LARGURA; j++) {
+        int j;
+        for (j = 0; j <= LARGURA - 8; j += 8) {
             if (tela[i][j].ativo && autenticaQueda(i, j)) {
                 realizaQueda(i, j);
-                i = xNovo;
-                j = yNovo;
-                desenhaTela();
+            }
+            if (tela[i][j + 1].ativo && autenticaQueda(i, j + 1)) {
+                realizaQueda(i, j + 1);
+            }
+            if (tela[i][j + 2].ativo && autenticaQueda(i, j + 2)) {
+                realizaQueda(i, j + 2);
+            }
+            if (tela[i][j + 3].ativo && autenticaQueda(i, j + 3)) {
+                realizaQueda(i, j + 3);
+            }
+            if (tela[i][j + 4].ativo && autenticaQueda(i, j + 4)) {
+                realizaQueda(i, j + 4);
+            }
+            if (tela[i][j + 5].ativo && autenticaQueda(i, j + 5)) {
+                realizaQueda(i, j + 5);
+            }
+            if (tela[i][j + 6].ativo && autenticaQueda(i, j + 6)) {
+                realizaQueda(i, j + 6);
+            }
+            if (tela[i][j + 7].ativo && autenticaQueda(i, j + 7)) {
+                realizaQueda(i, j + 7);
             }
         }
+        if((i % 2) == 0)
+            desenhaTela();
     }
 }
+
